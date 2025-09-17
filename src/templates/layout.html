@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio</title>
+    <!-- BOOTSTRAP 4-->
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.
+    css" 
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706
+    tWS" crossorigin="anonymous">
+    <!-- CUSTOM CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css.css')}}">
+   
+</head>
+<body>
+    <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-end space-x-6">
+          <a href="{{ url_for('home') }}" class="hover:text-green-600">Inicio</a>
+          <a href="{{ url_for('Nosotros') }}" class="hover:text-green-600">Nosotros</a>
+          <a href="{{ url_for('Productos') }}" class="hover:text-green-600">Productos</a>
+          <a href="{{ url_for('Contacto') }}" class="hover:text-green-600">Contacto</a>
+          <a href="{{ url_for('Mercados') }}" class="hover:text-green-600">Mercados</a>
+        </div>
+      </nav>
+      
+    {% block content %}
+    {% endblock %}
+    <!--<header>por c
+        <img src="{{ url_for('static', filename='images/36 .logo.jpeg') }}" alt="Logo de Cafetto">
+    </header>
+    <div class="container">
+        <h1>Cafetto</h1>
+        <p>Café suave Colombiano.</p>
+    </div>-->    
+</body>
+<!--<footer>
+    <a href="https://wa.me/573017357829" target="_blank">
+        <img src="{{ url_for('static', filename='icons/whatsapp.png') }}" alt="whatsapp" style="height: 24px;">
+    </a>
+    <a href="https://www.facebook.com/caffetto1" target="_blank">
+        <img src="{{ url_for('static', filename='icons/facebook (1).png') }}" alt="Facebook" style="height: 24px;">
+    <a href="https://x.com/caffetto11" target="_blank">
+        <img src="{{ url_for('static', filename='icons/X.png') }}" alt="X" style="height: 24px;">
+    </a>
+    <a href="https://www.instagram.com/cafetto.co" target="_blank">
+        <img src="{{ url_for('static', filename='icons/instagram.png') }}" alt="Instagram" style="height: 24px;">
+    </a>
+</footer>-->
+</html>

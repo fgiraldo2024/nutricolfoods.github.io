@@ -1,0 +1,137 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+header img {
+    max-width: 50%; /* Ajusta esto para cambiar el tamaño del logo */
+    height: auto;
+}
+
+container {
+    margin-top: 20px;
+}
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 1.2rem;
+}
+
+
+footer {
+    
+    height: 24px;
+    
+}
+
+
+
+
+</style> 
+/**body {
+    color: rgb(226, 10, 10);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #5d2727;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #fff;
+    border-top: 2px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    margin: 10px;
+    max-width: 300px; /* Ajusta según tus necesidades */
+  /*  height: auto;
+}/*
+
+/* Al final de tu archivo styles.css /*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .gallery img {
+        max-width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery img {
+        max-width: 30%;
+    }
+}

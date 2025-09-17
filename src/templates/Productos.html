@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutricol Foods — Productos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fcfbff;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f766e;
+      --accent-2:#06b6d4;
+      --glass: rgba(255,255,255,0.7);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#f7f9fb);color:#0f172a;}
+    .container{max-width:1100px;margin:48px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    /* Logo sizing control */
+    .logo-img{height:48px; width:auto; display:block; max-width:100%;}
+    @media (max-width:880px){
+      .logo-img{height:40px;}
+    }
+
+    /* Título de Productos */
+    .titulo-productos {
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      margin: 40px 0;
+      color: #006400;
+    }
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:22px;align-items:center}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 8px 30px rgba(15,23,42,0.06);}
+    .intro h2{margin:0 0 8px;font-size:18px}
+    .intro p{color:var(--muted);margin:0}
+
+    .products{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .product{display:flex;gap:14px;align-items:flex-start}
+    .product .img{width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,#fef3c7,#fdba74);display:flex;align-items:center;justify-content:center;font-weight:700;color:#92400e}
+    .product h3{margin:0;font-size:15px}
+    .product p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    /* CTA column */
+    .cta{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+    .cta .panel{background:linear-gradient(180deg, rgba(6,182,212,0.08), rgba(15,118,110,0.03));padding:18px;border-radius:12px;text-align:center}
+    .cta h3{margin:0 0 6px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;text-decoration:none;font-weight:600}
+    .small{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .products{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- Logo (ajustado a tamaño pequeño como en "nosotros") -->
+        <a href="{{ url_for('home') }}" class="flex items-center">
+          <img src="{{ url_for('static', filename='images/logo_nutricol_transparent.png') }}" 
+               alt="Nutricol Foods" 
+               class="logo-img">
+        </a>
+      </div>
+      <nav aria-label="Menú principal">
+        <ul style="list-style:none;display:flex;gap:20px;margin:0;padding:0;">
+          <li><a href="{{ url_for('home') }}">Inicio</a></li>
+          <li><a href="{{ url_for('Nosotros') }}">Nosotros</a></li>
+          <li><a href="{{ url_for('Mercados') }}">Mercados</a></li>
+          <li><a href="{{ url_for('Contacto') }}">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Título central -->
+    <h1 class="titulo-productos">Productos</h1>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Introducción</h2>
+        <p>Cada producto de <strong>Nutricol Foods</strong> es una embajada de la gastronomía colombiana. Seleccionamos y elaboramos alimentos que cumplen con los más altos estándares de calidad para llegar frescos, seguros y deliciosos a tu mesa.</p>
+
+        <div class="products">
+          <article class="product" aria-labelledby="cafe-title">
+            <div class="img" role="img" aria-label="Logo Cafetto">
+              <img src="{{ url_for('static', filename='images/cafetto_logo_transparent.png') }}" alt="Cafetto" style="width:40px; height:auto;">
+            </div>
+            <div>
+              <h3 id="cafe-title">Café Premium Colombiano</h3>
+              <p>Aroma intenso, sabor balanceado y cosechado a mano en las montañas de Antioquia.</p>
+            </div>
+          </article>
+          
+          <article class="product" aria-labelledby="barras-title">
+            <div class="img" role="img" aria-label="Barras de proteína">💪</div>
+            <div>
+              <h3 id="barras-title">Barras de proteína para deportistas</h3>
+              <p>Energía limpia y nutritiva, pensadas para rendimiento y recuperación.</p>
+            </div>
+          </article>
+
+          <article class="product" aria-labelledby="snack-title">
+            <div class="img" role="img" aria-label="Snack salado">🚴</div>
+            <div>
+              <h3 id="snack-title">Snack energético salado para ciclistas</h3>
+              <p>Innovador, sin dulzor, perfecto para entrenamientos de alta resistencia.</p>
+            </div>
+          </article>
+
+          <article class="product" aria-labelledby="diario-title">
+            <div class="img" role="img" aria-label="Alimentos diarios">🥗</div>
+            <div>
+              <h3 id="diario-title">Alimentos de consumo diario</h3>
+              <p>Variedad de productos que acercan a latinos y americanos a nuevos sabores auténticos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="cta">
+        <div class="panel card">
+          <h3>¿Quieres nuestro catálogo?</h3>
+          <p class="small">Catálogo completo con fichas técnicas, empaques disponibles y precios por volumen.</p>
+          <a class="btn" role="button" href="mailto:ventas@nutricol.com?subject=Solicitud%20de%20cat%C3%A1logo%20y%20precios">Solicita catálogo y precios</a>
+        </div>
+
+        <div class="card small">
+          <strong>Distribución y exportaciones</strong>
+          <p class="small" style="margin:8px 0 0">Trabajamos con distribuidores y tiendas en LATAM y EE. UU. Pregunta por condiciones y volúmenes mínimos.</p>
+        </div>
+
+        <div class="card small">
+          <strong>¿Necesitas muestras?</strong>
+          <p class="small" style="margin:8px 0 0">Solicita muestras para evaluar calidad y aceptación. Envíos disponibles según país.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer id="contact">
+      <p>Nutricol Foods — <span class="small">ventas@nutricol.com • +57 300 000 0000</span></p>
+    </footer>
+  </div>
+</body>
+</html>
